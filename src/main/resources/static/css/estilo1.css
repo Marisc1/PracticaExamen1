@@ -1,0 +1,10 @@
+/*selector universal para definir un tipo de letra tipo Sams Serif*/
+/* selector universal para definir un color de fondo "blanco ahumado" */
+
+/* En el index por ejemplo se pone <body id ="body">  por la siguiente etiqueta #body*/
+/*Y para que funcione, se pone la etiqueta <link href="css/menu.css" rel="stylesheet" type="text/css"/>  en el head*/
+
+#body{
+    font-family: sans-serif;
+    background-color: whitesmoke;
+}
