@@ -1,13 +1,40 @@
 <!DOCTYPE html>
-
-<html xmlns:th="http://www.thymeleaf.org">
+ 
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <title>Practica Examen</title>
         <meta charset="UTF-8">
         <link href="css/estilo1.css" rel="stylesheet" type="text/css"/>
     </head>
     <body id="body">
-        <div>Práctica para examen Web y Patrones</div>
-        <p th:text="${mensaje}"></p>
+        <h1>Lista de estados.</h1>
+        <a th:href="@{/nuevoEstado}">Nuevo Estado</a>
+        <div>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Tipo de Moneda</th>
+                        <th>Tamaño</th>
+                        <th>Capital</th>
+                        <th>Población</th>
+                        <th>Modificar</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="estado : ${estados}">
+                        <td th:text="${estado.nombre}"></td>
+                        <td th:text="${estado.moneda}"></td>
+                        <td th:text="${estado.tamano}"></td>
+                        <td th:text="${estado.capital}"></td>
+                        <td th:text="${estado.poblacion}"></td>
+                        <td><a th:href="@{/modificarEstado/} + ${estado.id_estado}">Modificar</td>
+                        <td><a th:href="@{/eliminarEstado/} + ${estado.id_estado}">Eliminar</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </body>
 </html>
